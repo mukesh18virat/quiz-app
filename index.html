@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Quiz App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+
+<body>
+    <div class="container">
+        <!-- Start Screen -->
+        <div id="start-screen" class="screen">
+            <h1><i class="fa-solid fa-brain"></i> Quiz Master</h1>
+            <div class="settings">
+                <div class="setting-group">
+                    <label>Category:</label>
+                    <select id="category">
+            <option value="any">Any Category</option>
+            <option value="9">General Knowledge</option>
+            <option value="18">Computers</option>
+            <option value="21">Sports</option>
+            <option value="23">History</option>
+          </select>
+                </div>
+                <div class="setting-group">
+                    <label>Difficulty:</label>
+                    <select id="difficulty">
+            <option value="any">Any Difficulty</option>
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+                </div>
+                <div class="setting-group">
+                    <label>Questions:</label>
+                    <select id="amount">
+            <option value="5">5</option>
+            <option value="10" selected>10</option>
+            <option value="15">15</option>
+          </select>
+                </div>
+            </div>
+            <div class="high-score">High Score: <span id="high-score">0</span></div>
+            <button id="start-btn" class="btn-primary">Start Quiz</button>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quiz-screen" class="screen" style="display: none;">
+            <div class="quiz-header">
+                <div class="quiz-info">
+                    <span id="question-counter">Question 1/10</span>
+                    <span id="score">Score: 0</span>
+                </div>
+                <div class="timer">
+                    <i class="fa-solid fa-clock"></i>
+                    <span id="time">15</span>s
+                </div>
+            </div>
+
+            <div class="progress-bar">
+                <div id="progress" class="progress"></div>
+            </div>
+
+            <h2 id="question">Question text</h2>
+            <div id="answer-buttons" class="btn-grid"></div>
+            <button id="next-btn" class="btn-primary" style="display: none;">Next</button>
+        </div>
+
+        <!-- Result Screen -->
+        <div id="result-screen" class="screen" style="display: none;">
+            <h1>Quiz Complete!</h1>
+            <div class="result-stats">
+                <div class="stat">
+                    <i class="fa-solid fa-trophy"></i>
+                    <p>Score</p>
+                    <h3 id="final-score">0</h3>
+                </div>
+                <div class="stat">
+                    <i class="fa-solid fa-percent"></i>
+                    <p>Accuracy</p>
+                    <h3 id="accuracy">0%</h3>
+                </div>
+                <div class="stat">
+                    <i class="fa-solid fa-stopwatch"></i>
+                    <p>Avg Time</p>
+                    <h3 id="avg-time">0s</h3>
+                </div>
+            </div>
+            <div id="result-msg" class="result-msg"></div>
+            <div class="result-buttons">
+                <button id="restart-btn" class="btn-primary">Play Again</button>
+                <button id="home-btn" class="btn-secondary">Home</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
